@@ -1,65 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jason Rossi | Software Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jason Rossi · Software Engineer</title>
+  <meta name="description" content="Jason Rossi is a full-stack software engineer in New York City building React front ends and the APIs behind them.">
+  <meta property="og:title" content="Jason Rossi, Software Engineer">
+  <meta property="og:description" content="Full-stack software engineer in New York City. Experience, projects and résumé.">
+  <meta property="og:image" content="https://jrossi3.github.io/personal-website/headshot.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#13203a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313203a'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='28' font-weight='700' text-anchor='middle' fill='%23ffffff'%3EJR%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header class="hero">
-    <h1>Jason Rossi</h1>
-    <p>Software Engineer | Web Developer</p>
-    <a class="button" href="Resume.pdf" download>Download Resume</a>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#top">Jason Rossi</a>
+      <nav class="topbar__nav" aria-label="Sections">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn--small" href="Resume.pdf" download>Résumé</a>
+    </div>
   </header>
 
-  <nav class="main-nav">
-    <a href="#about">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="https://github.com/jrossi3" target="_blank">GitHub</a>
-  </nav>
-
-  <main>
-    <section id="about" class="section">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>I’m a Computer Science graduate from Stevens Institute of Technology with a deep interest in full-stack development. I've worked across diverse roles—from software development to teaching—and am passionate about delivering impactful solutions.</p>
-        <p>In my free time, I enjoy chess, soccer, golf, and keeping up to date with the stock market.</p>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <h1 class="hero__name">Jason<br>Rossi</h1>
+          <p>I'm a full-stack engineer at The Cigna Group, where I build React interfaces and the Python and C# APIs that power them for large enterprise projects. Before that I wrote test automation at G3 Technologies, handled security incidents at Jefferies, and taught Data Structures and Linear Algebra at Stevens, where I earned my B.S. and M.S. in Computer Science.</p>
+          <div class="hero__actions">
+            <a class="btn" href="Resume.pdf" download>Download résumé</a>
+            <a class="btn btn--ghost" href="mailto:jasrossi14@gmail.com">Email me</a>
+            <a class="textlink" href="https://github.com/jrossi3" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <figure class="hero__photo">
+          <img src="headshot.jpg" width="480" height="598" alt="Portrait of Jason Rossi">
+        </figure>
       </div>
     </section>
 
-    <section id="experience" class="section alt">
-      <div class="container">
-        <h2>Experience</h2>
-        <ul>
-          <li><strong>Application Development Advisor</strong> – The Cigna Group (August 2023 – Present)</li>
-          <li><strong>TECDP Lead Analyst</strong> – The Cigna Group (Jul 2023 – August 2023)</li>
-          <li><strong>Security Analyst Intern</strong> – Jefferies Group (Jan 2021 – May 2021)</li>
-          <li><strong>Automation Developer</strong> – G3 Technologies (Jan 2022 – May 2022)</li>
-          <li><strong>Teaching Assistant</strong> – Data Structures & Linear Algebra (2021–2022)</li>
-        </ul>
+    <section class="section" id="about" aria-labelledby="about-h">
+      <div class="wrap split">
+        <h2 id="about-h">About</h2>
+        <div class="prose">
+          <p>I hold a B.S. and M.S. in Computer Science from Stevens Institute of Technology and have worked across enterprise software, test automation, security operations and teaching. I like work where a clean interface meets a messy data problem underneath it.</p>
+          <p>Outside of work I play chess, soccer and golf, and follow the stock market closely.</p>
+          <dl class="skills">
+            <div><dt>Languages &amp; frameworks</dt><dd>React, JavaScript, Python, C#, Node.js, SQL, MongoDB, GraphQL, Java, C++</dd></div>
+            <div><dt>Tools &amp; platforms</dt><dd>AWS (Cloud Practitioner), Git, GitLab, Cypress, Jira, Splunk, Linux</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
-    <section id="education" class="section">
-      <div class="container">
-        <h2>Education</h2>
-        <p><strong>Stevens Institute of Technology</strong><br />
-          B.S. & M.S. in Computer Science<br />
-          GPA: 3.83 | Dean’s List | Edwin A. Stevens Scholar</p>
-        <p><strong>Relevant Coursework:</strong> Web Development I and II, Algorithms, Data Structures, Concurrent Programming, Artificial Intelligence</p>
+    <section class="section section--tint" id="experience" aria-labelledby="exp-h">
+      <div class="wrap split">
+        <h2 id="exp-h">Experience</h2>
+        <ol class="timeline">
+          <li class="role">
+            <p class="role__when">Jul 2023 – October 2026</p>
+            <div>
+              <h3 class="role__title">The Cigna Group <span class="role__org">Evernorth</span></h3>
+              <p class="role__sub">Application Development Advisor, Aug 2025 – October 2026<br>TECDP Lead Analyst, Jul – Aug 2025</p>
+              <ul>
+                <li>Build scalable APIs in Python and C# that pull and shape SQL data for front-end use</li>
+                <li>Develop reusable React components, including filtering panels, modals and interactive tables</li>
+                <li>Won 1st place in the TECDP Code-A-Thon modeling nurse visit routes in Python</li>
+              </ul>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role__when">Jan – May 2022</p>
+            <div>
+              <h3 class="role__title">G3 Technologies</h3>
+              <p class="role__sub">Automation Developer</p>
+              <ul>
+                <li>Wrote 100+ automated test scripts in JavaScript and Cypress, integrated with Python</li>
+                <li>Replaced manual runbooks with repeatable automation for pre-release hardware testing</li>
+              </ul>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role__when">Aug 2021 – May 2022</p>
+            <div>
+              <h3 class="role__title">Stevens Institute of Technology</h3>
+              <p class="role__sub">Teaching Assistant, Data Structures and Linear Algebra</p>
+              <ul>
+                <li>Held office hours for 200+ students and graded 800+ assignments and exams</li>
+                <li>Wrote bash scripts to automate grading and flag academic integrity issues</li>
+              </ul>
+            </div>
+          </li>
+          <li class="role">
+            <p class="role__when">Jan – May 2021</p>
+            <div>
+              <h3 class="role__title">Jefferies Group</h3>
+              <p class="role__sub">Security Analyst Intern</p>
+              <ul>
+                <li>Resolved 400+ security incidents, including phishing and data loss events</li>
+                <li>Automated remediation with Python and ServiceNow, and host cleanup in Qualys</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="proj-h">
+      <div class="wrap split">
+        <h2 id="proj-h">Projects</h2>
+        <div>
+          <ul class="projects">
+            <li class="project">
+              <h3><a href="https://jrossi3.github.io/sleeper-ifl/" target="_blank" rel="noopener">Fantasy Football Tracker</a></h3>
+              <p>A React app for exploring any Sleeper fantasy football league from a username: trades, waivers, records and weekly matchups.</p>
+              <details class="demo">
+                <summary>Watch demo</summary>
+                <video controls preload="none" playsinline><source src="sleeper.mov"></video>
+              </details>
+            </li>
+            <li class="project">
+              <h3><a href="https://jrossi3.github.io/quiz-app/" target="_blank" rel="noopener">Quiz App</a></h3>
+              <p>An interactive quiz platform with dynamic question rendering and scoring.</p>
+              <details class="demo">
+                <summary>Watch demo</summary>
+                <video controls preload="none" playsinline><source src="QuizApp.mov"></video>
+              </details>
+            </li>
+            <li class="project">
+              <h3><a href="https://jrossi3.github.io/interactive-timer/" target="_blank" rel="noopener">Interactive Timer</a></h3>
+              <p>An adjustable, accessible timer with clear visual feedback.</p>
+              <details class="demo">
+                <summary>Watch demo</summary>
+                <video controls preload="none" playsinline><source src="Timer.mov"></video>
+              </details>
+            </li>
+            <li class="project">
+              <h3><a href="https://jrossi3.github.io/Spring-Break-Calculator/" target="_blank" rel="noopener">Spring Break Calculator</a></h3>
+              <p>A JavaScript countdown to your next spring break.</p>
+              <details class="demo">
+                <summary>Watch demo</summary>
+                <video controls preload="none" playsinline><source src="SpringBreakCalculator.mp4" type="video/mp4"></video>
+              </details>
+            </li>
+          </ul>
+          <p class="more"><strong>Also built:</strong> a roommate matcher (MongoDB, Handlebars, auth), an options trading tracker (React, MongoDB) and a sports betting-odds analysis tool using DraftKings data in Python.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="education" aria-labelledby="edu-h">
+      <div class="wrap split">
+        <h2 id="edu-h">Education</h2>
+        <div class="prose">
+          <h3 class="role__title">Stevens Institute of Technology</h3>
+          <p class="role__sub">B.S. and M.S. in Computer Science, 2019 – 2023</p>
+          <p>Magna Cum Laude, Dean’s List, Edwin A. Stevens Scholar. GPA 3.83.</p>
+          <p class="muted">Coursework: Web Development I and II, Algorithms, Data Structures, Concurrent Programming, Artificial Intelligence.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <h2 id="contact-h" class="contact__title">Let’s talk.</h2>
+        <p class="contact__text">Email is the best way to reach me.</p>
+        <p class="contact__links">
+          <a href="mailto:jasrossi14@gmail.com">jasrossi14@gmail.com</a>
+          <a href="https://github.com/jrossi3" target="_blank" rel="noopener">github.com/jrossi3</a>
+          <a href="Resume.pdf" download>Résumé (PDF)</a>
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>Jason Rossi | <a href="mailto:Jasrossi14@gmail.com">Jasrossi14@gmail.com</a></p>
+    <div class="wrap">© <span id="year">2026</span> Jason Rossi</div>
   </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
-
 </html>
