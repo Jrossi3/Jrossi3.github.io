@@ -23,12 +23,17 @@
     <div class="wrap topbar__inner">
       <a class="brand" href="#top">Jason Rossi</a>
       <nav class="topbar__nav" aria-label="Sections">
+        <a href="#top" aria-current="true">Home</a>
+        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn btn--small" href="Resume.pdf" download>Résumé</a>
+      <a class="topbar__resume" href="Resume.pdf" download>
+        <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M8 1.75v8.5M4.25 6.5 8 10.25l3.75-3.75M2.5 13.75h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Résumé
+      </a>
     </div>
   </header>
 
@@ -37,8 +42,7 @@
       <div class="wrap hero__grid">
         <div class="hero__text">
           <h1 class="hero__name">Jason<br>Rossi</h1>
-          <p>I'm a full-stack engineer at The Cigna Group, where I build React interfaces and the Python and C# APIs that power them for large enterprise projects. Before that I wrote test automation at G3 Technologies, handled security incidents at Jefferies, and taught Data Structures and Linear Algebra at Stevens, where I earned my B.S. and M.S. in Computer Science.</p>
-          <div class="hero__actions">
+          <p>I'm a full-stack software engineer in New York City. I have a B.S. and M.S. in Computer Science from Stevens Institute of Technology in Hoboken, NJ, and outside of work I play chess, soccer and golf.</p>            <div class="hero__actions">
             <a class="btn" href="Resume.pdf" download>Download résumé</a>
             <a class="btn btn--ghost" href="mailto:jasrossi14@gmail.com">Email me</a>
             <a class="textlink" href="https://github.com/jrossi3" target="_blank" rel="noopener">GitHub</a>
@@ -72,7 +76,7 @@
             <p class="role__when">Jul 2023 – October 2026</p>
             <div>
               <h3 class="role__title">The Cigna Group <span class="role__org">Evernorth</span></h3>
-              <p class="role__sub">Application Development Advisor, Aug 2025 – October 2026<br>TECDP Lead Analyst, Jul – Aug 2025</p>
+              <p class="role__sub">Application Development Advisor, Aug 2025 – October 2026<br>TECDP Lead Analyst, July 2023 – Aug 2025</p>
               <ul>
                 <li>Build scalable APIs in Python and C# that pull and shape SQL data for front-end use</li>
                 <li>Develop reusable React components, including filtering panels, modals and interactive tables</li>
@@ -188,6 +192,41 @@
   <footer class="footer">
     <div class="wrap">© <span id="year">2026</span> Jason Rossi</div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Highlight the nav link for the section currently in view.
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.topbar__nav a'));
+      var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+      var ticking = false;
+
+      function update() {
+        ticking = false;
+        var line = window.scrollY + window.innerHeight * 0.35;
+        var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+        var current = 0;
+        sections.forEach(function (sec, i) {
+          if (sec && sec.getBoundingClientRect().top + window.scrollY <= line) current = i;
+        });
+        if (atBottom) current = sections.length - 1;
+        links.forEach(function (a, i) {
+          if (i === current) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+        var active = links[current];
+        var nav = active.parentNode;
+        if (nav.scrollWidth > nav.clientWidth) {
+          nav.scrollTo({ left: active.offsetLeft - 16, behavior: 'auto' });
+        }
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+      }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
 </body>
 </html>
